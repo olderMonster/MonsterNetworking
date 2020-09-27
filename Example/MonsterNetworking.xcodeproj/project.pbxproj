@@ -7,10 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04296FF425202CE00024F050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04296FF325202CE00024F050 /* AppDelegate.swift */; };
+		04296FFA25202CF00024F050 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04296FF925202CF00024F050 /* RootViewController.swift */; };
+		0429700025202D2D0024F050 /* NetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04296FFE25202D2C0024F050 /* NetService.swift */; };
+		0429700125202D2D0024F050 /* NetInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04296FFF25202D2D0024F050 /* NetInterceptor.swift */; };
+		0429700F25202D7C0024F050 /* VideoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0429700C25202D7C0024F050 /* VideoListController.swift */; };
+		0429701025202D7C0024F050 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0429700D25202D7C0024F050 /* Video.swift */; };
+		0429701125202D7C0024F050 /* VideoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0429700E25202D7C0024F050 /* VideoListCell.swift */; };
+		0429701925202D890024F050 /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0429701725202D890024F050 /* TodayCell.swift */; };
+		0429701A25202D890024F050 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0429701825202D890024F050 /* TodayViewController.swift */; };
 		13E08790FBF70FFF67835A73 /* Pods_MonsterNetworking_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EA3724F49878EDA3286415 /* Pods_MonsterNetworking_Example.framework */; };
 		43C8FC7F0110948423696EAA /* Pods_MonsterNetworking_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F06A25F605ECFE31EDF8091 /* Pods_MonsterNetworking_Tests.framework */; };
-		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
@@ -28,14 +35,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04296FF325202CE00024F050 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		04296FF925202CF00024F050 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		04296FFE25202D2C0024F050 /* NetService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetService.swift; sourceTree = "<group>"; };
+		04296FFF25202D2D0024F050 /* NetInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetInterceptor.swift; sourceTree = "<group>"; };
+		0429700C25202D7C0024F050 /* VideoListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoListController.swift; sourceTree = "<group>"; };
+		0429700D25202D7C0024F050 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		0429700E25202D7C0024F050 /* VideoListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoListCell.swift; sourceTree = "<group>"; };
+		0429701725202D890024F050 /* TodayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
+		0429701825202D890024F050 /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		05EA3724F49878EDA3286415 /* Pods_MonsterNetworking_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonsterNetworking_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D6E8831779D23F43940050 /* Pods-MonsterNetworking_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonsterNetworking_Tests.debug.xcconfig"; path = "Target Support Files/Pods-MonsterNetworking_Tests/Pods-MonsterNetworking_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		5C349D55143BB4A67B2C7AC6 /* MonsterNetworking.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = MonsterNetworking.podspec; path = ../MonsterNetworking.podspec; sourceTree = "<group>"; };
-		5FAC79A379030D350D1755CE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		5C349D55143BB4A67B2C7AC6 /* MonsterNetworking.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MonsterNetworking.podspec; path = ../MonsterNetworking.podspec; sourceTree = "<group>"; };
+		5FAC79A379030D350D1755CE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* MonsterNetworking_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonsterNetworking_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -45,7 +59,7 @@
 		6F06A25F605ECFE31EDF8091 /* Pods_MonsterNetworking_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonsterNetworking_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E298359B99E983F1D90A1B4 /* Pods-MonsterNetworking_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonsterNetworking_Tests.release.xcconfig"; path = "Target Support Files/Pods-MonsterNetworking_Tests/Pods-MonsterNetworking_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		AE2FEB9722DC4BB78A442C17 /* Pods-MonsterNetworking_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonsterNetworking_Example.release.xcconfig"; path = "Target Support Files/Pods-MonsterNetworking_Example/Pods-MonsterNetworking_Example.release.xcconfig"; sourceTree = "<group>"; };
-		CD04C346514FAC9322381617 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		CD04C346514FAC9322381617 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		FA07E15880EF76D59831CBFF /* Pods-MonsterNetworking_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonsterNetworking_Example.debug.xcconfig"; path = "Target Support Files/Pods-MonsterNetworking_Example/Pods-MonsterNetworking_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +83,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04296FF125202CC10024F050 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				04296FF325202CE00024F050 /* AppDelegate.swift */,
+				04296FF925202CF00024F050 /* RootViewController.swift */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		04296FFD25202D220024F050 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				04296FFF25202D2D0024F050 /* NetInterceptor.swift */,
+				04296FFE25202D2C0024F050 /* NetService.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		0429700B25202D6B0024F050 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				0429700C25202D7C0024F050 /* VideoListController.swift */,
+				0429700E25202D7C0024F050 /* VideoListCell.swift */,
+				0429700D25202D7C0024F050 /* Video.swift */,
+			);
+			name = Videos;
+			sourceTree = "<group>";
+		};
+		0429701625202D800024F050 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				0429701725202D890024F050 /* TodayCell.swift */,
+				0429701825202D890024F050 /* TodayViewController.swift */,
+			);
+			name = History;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -93,8 +144,10 @@
 		607FACD21AFB9204008FA782 /* Example for MonsterNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				0429701625202D800024F050 /* History */,
+				0429700B25202D6B0024F050 /* Videos */,
+				04296FFD25202D220024F050 /* Networking */,
+				04296FF125202CC10024F050 /* AppDelegate */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -147,7 +200,6 @@
 				26D6E8831779D23F43940050 /* Pods-MonsterNetworking_Tests.debug.xcconfig */,
 				9E298359B99E983F1D90A1B4 /* Pods-MonsterNetworking_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -213,7 +265,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1200;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -227,6 +279,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -291,11 +344,19 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MonsterNetworking_Example/Pods-MonsterNetworking_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MonsterNetworking/MonsterNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MonsterNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -331,8 +392,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				0429700F25202D7C0024F050 /* VideoListController.swift in Sources */,
+				0429701125202D7C0024F050 /* VideoListCell.swift in Sources */,
+				0429701025202D7C0024F050 /* Video.swift in Sources */,
+				0429701925202D890024F050 /* TodayCell.swift in Sources */,
+				04296FFA25202CF00024F050 /* RootViewController.swift in Sources */,
+				0429700125202D2D0024F050 /* NetInterceptor.swift in Sources */,
+				04296FF425202CE00024F050 /* AppDelegate.swift in Sources */,
+				0429701A25202D890024F050 /* TodayViewController.swift in Sources */,
+				0429700025202D2D0024F050 /* NetService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,11 +546,14 @@
 			baseConfigurationReference = FA07E15880EF76D59831CBFF /* Pods-MonsterNetworking_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MonsterNetworking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -493,11 +564,13 @@
 			baseConfigurationReference = AE2FEB9722DC4BB78A442C17 /* Pods-MonsterNetworking_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MonsterNetworking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -507,6 +580,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 26D6E8831779D23F43940050 /* Pods-MonsterNetworking_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -529,6 +603,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9E298359B99E983F1D90A1B4 /* Pods-MonsterNetworking_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",

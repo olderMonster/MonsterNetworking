@@ -22,7 +22,7 @@ pod 'MonsterNetworking'
 
 ## Author
 
-olderMonster, cong.yin@ttpai.cn
+olderMonster, 406416312@qq.com
 
 ## License
 

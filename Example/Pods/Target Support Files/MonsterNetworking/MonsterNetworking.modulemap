@@ -1,0 +1,6 @@
+framework module MonsterNetworking {
+  umbrella header "MonsterNetworking-umbrella.h"
+
+  export *
+  module * { export * }
+}

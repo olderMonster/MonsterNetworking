@@ -2,7 +2,10 @@ use_frameworks!
 
 target 'MonsterNetworking_Example' do
   pod 'MonsterNetworking', :path => '../'
-
+  pod 'SwiftyJSON'
+  pod 'SnapKit'
+  pod 'Kingfisher'
+  
   target 'MonsterNetworking_Tests' do
     inherit! :search_paths
 

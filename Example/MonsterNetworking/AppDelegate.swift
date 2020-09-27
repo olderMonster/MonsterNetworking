@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MonsterNetworking
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.backgroundColor = .white
+        
+        self.window?.rootViewController = RootViewController()
+        self.window?.makeKeyAndVisible()
+        
+        //配置网络请求相关
+        setupNet()
+        
         return true
     }
 
@@ -42,5 +53,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+
+//网络配置
+extension AppDelegate {
+    
+    func setupNet() {
+        //配置当前网络环境
+        APIStatus.shared.current = APIStatus.test
+        
+        //配置当前网络请求源
+        APIManager.default.service = NetService.douyu
+        APIManager.default.interceptor = NetInterceptor()
+    }
+    
 }
 

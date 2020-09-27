@@ -1,0 +1,6 @@
+framework module Pods_MonsterNetworking_Example {
+  umbrella header "Pods-MonsterNetworking_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
