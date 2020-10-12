@@ -1,8 +1,8 @@
 PODS:
-  - Alamofire (4.9.1)
+  - Alamofire (4.0.1)
   - Kingfisher (4.10.1)
-  - MonsterNetworking (1.0.0):
-    - Alamofire
+  - MonsterNetworking (1.0.1):
+    - Alamofire (~> 4.0.0)
   - SnapKit (4.2.0)
   - SwiftyJSON (5.0.0)
 
@@ -24,9 +24,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
-  MonsterNetworking: 5b80326a3dc70d1fc784869dd548e551ca8ed459
+  MonsterNetworking: 6e61a2dab7ed2b9ce0edf346660744f5b871afd6
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 

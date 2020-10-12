@@ -1,7 +1,7 @@
 //
 //  NetworkReachabilityManager.swift
 //
-//  Copyright (c) 2014 Alamofire Software Foundation (http://alamofire.org/)
+//  Copyright (c) 2014-2016 Alamofire Software Foundation (http://alamofire.org/)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -34,6 +34,16 @@ import SystemConfiguration
 /// network requests when a connection is established. It should not be used to prevent a user from initiating a network
 /// request, as it's possible that an initial request may be required to establish reachability.
 open class NetworkReachabilityManager {
+    /**
+        Defines the various states of network reachability.
+
+        - Unknown:         It is unknown whether the network is reachable.
+        - NotReachable:    The network is not reachable.
+        - ReachableOnWWAN: The network is reachable over the WWAN connection.
+        - ReachableOnWiFi: The network is reachable over the WiFi connection.
+    */
+
+
     /// Defines the various states of network reachability.
     ///
     /// - unknown:      It is unknown whether the network is reachable.
@@ -81,7 +91,7 @@ open class NetworkReachabilityManager {
     /// A closure executed when the network reachability status changes.
     open var listener: Listener?
 
-    open var flags: SCNetworkReachabilityFlags? {
+    private var flags: SCNetworkReachabilityFlags? {
         var flags = SCNetworkReachabilityFlags()
 
         if SCNetworkReachabilityGetFlags(reachability, &flags) {
@@ -92,7 +102,7 @@ open class NetworkReachabilityManager {
     }
 
     private let reachability: SCNetworkReachability
-    open var previousFlags: SCNetworkReachabilityFlags
+    private var previousFlags: SCNetworkReachabilityFlags
 
     // MARK: - Initialization
 
@@ -128,9 +138,7 @@ open class NetworkReachabilityManager {
 
     private init(reachability: SCNetworkReachability) {
         self.reachability = reachability
-
-        // Set the previous flags to an unreserved value to represent unknown status
-        self.previousFlags = SCNetworkReachabilityFlags(rawValue: 1 << 30)
+        self.previousFlags = SCNetworkReachabilityFlags()
     }
 
     deinit {
@@ -159,11 +167,8 @@ open class NetworkReachabilityManager {
         let queueEnabled = SCNetworkReachabilitySetDispatchQueue(reachability, listenerQueue)
 
         listenerQueue.async {
-            self.previousFlags = SCNetworkReachabilityFlags(rawValue: 1 << 30)
-
-            guard let flags = self.flags else { return }
-
-            self.notifyListener(flags)
+            self.previousFlags = SCNetworkReachabilityFlags()
+            self.notifyListener(self.flags ?? SCNetworkReachabilityFlags())
         }
 
         return callbackEnabled && queueEnabled
@@ -187,24 +192,21 @@ open class NetworkReachabilityManager {
     // MARK: - Internal - Network Reachability Status
 
     func networkReachabilityStatusForFlags(_ flags: SCNetworkReachabilityFlags) -> NetworkReachabilityStatus {
-        guard isNetworkReachable(with: flags) else { return .notReachable }
+        guard flags.contains(.reachable) else { return .notReachable }
 
-        var networkStatus: NetworkReachabilityStatus = .reachable(.ethernetOrWiFi)
+        var networkStatus: NetworkReachabilityStatus = .notReachable
 
-    #if os(iOS)
-        if flags.contains(.isWWAN) { networkStatus = .reachable(.wwan) }
-    #endif
+        if !flags.contains(.connectionRequired) { networkStatus = .reachable(.ethernetOrWiFi) }
+
+        if flags.contains(.connectionOnDemand) || flags.contains(.connectionOnTraffic) {
+            if !flags.contains(.interventionRequired) { networkStatus = .reachable(.ethernetOrWiFi) }
+        }
+
+        #if os(iOS)
+            if flags.contains(.isWWAN) { networkStatus = .reachable(.wwan) }
+        #endif
 
         return networkStatus
-    }
-
-    func isNetworkReachable(with flags: SCNetworkReachabilityFlags) -> Bool {
-        let isReachable = flags.contains(.reachable)
-        let needsConnection = flags.contains(.connectionRequired)
-        let canConnectAutomatically = flags.contains(.connectionOnDemand) || flags.contains(.connectionOnTraffic)
-        let canConnectWithoutUserInteraction = canConnectAutomatically && !flags.contains(.interventionRequired)
-
-        return isReachable && (!needsConnection || canConnectWithoutUserInteraction)
     }
 }
 
