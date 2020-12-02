@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MonsterNetworking'
-  s.version          = '1.0.4'
+  s.version          = '1.0.5'
   s.summary          = 'A short description of MonsterNetworking.'
 
 # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/olderMonster/MonsterNetworking.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'MonsterNetworking/Classes/**/*'
   
@@ -38,6 +38,5 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
-     s.dependency 'Alamofire'
+     s.dependency 'Alamofire', '~> 5.0'
 end

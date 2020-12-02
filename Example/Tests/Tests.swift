@@ -1,5 +1,4 @@
 import XCTest
-import MonsterNetworking
 
 class Tests: XCTestCase {
     

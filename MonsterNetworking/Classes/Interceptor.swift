@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 
-public protocol Interceptor: RequestAdapter {
+public protocol Interceptor {
     
     /// 请求成功，此时可在该方法中统一分发业务到failedInRequest中
     /// - Parameters:
@@ -32,10 +32,10 @@ extension Interceptor {
     ///   - urlRequest: 请求对象
     ///   - session: Alamofire.session：AF对象
     ///   - completion: 处理后的Request回调
-    func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
-        return urlRequest
-    }
-    
+//    func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
+//        return urlRequest
+//    }
+//    
     
     
     

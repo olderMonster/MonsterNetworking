@@ -1,6 +1,6 @@
 {
   "name": "MonsterNetworking",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "summary": "A short description of MonsterNetworking.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/olderMonster/MonsterNetworking",
@@ -13,15 +13,15 @@
   },
   "source": {
     "git": "https://github.com/olderMonster/MonsterNetworking.git",
-    "tag": "1.0.1"
+    "tag": "1.0.4"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "10.0"
   },
   "source_files": "MonsterNetworking/Classes/**/*",
   "dependencies": {
     "Alamofire": [
-      "~> 4.0.0"
+      "~> 5.0"
     ]
   }
 }

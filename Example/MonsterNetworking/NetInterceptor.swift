@@ -7,14 +7,10 @@
 //
 
 import Foundation
-import MonsterNetworking
 import SwiftyJSON
+import MonsterNetworking
 
 struct NetInterceptor: Interceptor  {
-    func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
-        return urlRequest
-    }
-    
     
     func succeedInRequest(response: HTTPReponse) -> Swift.Result<HTTPReponse, APIError> {
         
