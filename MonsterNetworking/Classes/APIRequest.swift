@@ -14,7 +14,7 @@ import Foundation
     public fileprivate(set) var headerFields: [String: String] = [:]
     public fileprivate(set) var paramaters: [String: Any] = [:]
     
-    init(_ service: APIService, methodName: String, paramaters: [String: Any]?, headers: [String: String]?) {
+    init(_ service: APIService, methodName: String, paramaters: [String: Any], headers: [String: String]) {
         let urlString = service.baseURL + "/" + methodName
         let url = URL(string: urlString) 
         if url == nil {
@@ -22,17 +22,7 @@ import Foundation
         }
         self.url = url!
         self.service = service
-        
-        var params: [String: Any] = service.commonParamaters
-        if let paramaters = paramaters {
-            paramaters.forEach({ params[$0] = $1 })
-        }
-        self.paramaters = params
-        
-        var fields: [String: String] = service.
-        if let headers = headers {
-            headers.forEach({ fields[$0] = $1 })
-        }
-        self.headerFields = fields
+        self.paramaters = paramaters
+        self.headerFields = headers
     }
 }

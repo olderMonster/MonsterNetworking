@@ -11,7 +11,7 @@ import Alamofire
 
 
 /// Request拦截器
-protocol RequestInterceptor {
+public protocol RequestInterceptor {
     func request(of request: APIRequest) -> APIRequest
 }
 extension RequestInterceptor {
@@ -21,7 +21,7 @@ extension RequestInterceptor {
 
 
 /// Response拦截器
-protocol ResponseInterceptor {
+public protocol ResponseInterceptor {
     
     /// 网络请求成功处理返回数据。如请求获得的是加密后的数据，此时可以先解密处理。
     /// - Returns: 处理后的数据,以及当前业务状态(成功或者失败)

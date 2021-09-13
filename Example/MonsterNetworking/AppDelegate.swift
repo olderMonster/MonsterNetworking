@@ -64,8 +64,8 @@ extension AppDelegate {
         APIStatus.shared.current = APIStatus.test
         
         //配置当前网络请求源
-        APIManager.default.service = NetService.douyu
-        APIManager.default.interceptor = NetInterceptor()
+//        APIManager.default.service = NetService.douyu
+//        APIManager.default.interceptor = NetInterceptor()
     }
     
 }

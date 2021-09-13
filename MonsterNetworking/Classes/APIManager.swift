@@ -38,6 +38,9 @@ public class APIManager  {
     public var requestInterceptor: RequestInterceptor?
     public var responseInterceptor: ResponseInterceptor?
     
+    /// 参数生成
+    public var generator: Generator?
+    
     
     /// 网络请求
     /// - Parameters:
@@ -45,7 +48,7 @@ public class APIManager  {
     ///   - succeed: 成功
     ///   - failure: 失败
     public static func request(methodName: String,paramaters: [String: Any]? = nil, handler: @escaping (Result<Any, APIError>) -> Void) {
-        APIManager.request(service: nil, methodName: methodName, paramaters: paramaters, headers: nil, generator: nil, complention: complention)
+        APIManager.request(service: nil, methodName: methodName, paramaters: paramaters, headers: nil, handler: handler)
     }
     
     
@@ -57,7 +60,7 @@ public class APIManager  {
     ///   - succeed: 成功
     ///   - failure: 失败
     public static func request(service: APIService, methodName: String, paramaters: [String: Any]? = nil, handler: @escaping (Result<Any, APIError>) -> Void) {
-        APIManager.request(service: service, methodName: methodName, paramaters: paramaters, headers: nil, method: RequestMethod.get, generator: nil, complention: complention)
+        APIManager.request(service: service, methodName: methodName, paramaters: paramaters, headers: nil, method: RequestMethod.get, handler: handler)
     }
     
     
@@ -73,15 +76,27 @@ public class APIManager  {
     ///   - interceptor: 拦截器，用于拦截Request以及Response，对所拦截的对象进行处理
     ///   - succeed: 成功
     ///   - failure: 失败
-    public static func request(service: APIService?, methodName: String, paramaters: [String: Any]?, headers:[String: String]?, method: RequestMethod = RequestMethod.get, generator: Generator?, handler: @escaping (Result<Any, APIError>) -> Void) {
+    public static func request(service: APIService?, methodName: String, paramaters: [String: Any]?, headers:[String: String]?, method: RequestMethod = RequestMethod.get, handler: @escaping (Result<Any, APIError>) -> Void) {
         
         guard let service = service ?? APIManager.default.service else {
             assertionFailure("网络请求service不能为空")
             return
         }
-        let request = APIRequest(service, methodName: methodName, paramaters: paramaters, headers: headers)
-
-        let dataRequest = AF.request(request.url, method: method.value, parameters: request.paramaters, headers: HTTPHeaders(request.headerFields)).responseJSON { response in
+        var requestParamaters = paramaters ?? [String: Any]()
+        var headerFields = headers ?? [String: String]()
+        if let generator = APIManager.default.generator {
+            if let params = generator.paramaters(for: service), !params.isEmpty {
+                params.forEach({ requestParamaters[$0] = $1 })
+            }
+            if let fields = generator.headerFields(for: service), !fields.isEmpty {
+                fields.forEach({ headerFields[$0] = $1 })
+            }
+        }
+        var request = APIRequest(service, methodName: methodName, paramaters: requestParamaters, headers: headerFields)
+        if let requestInterceptor = APIManager.default.requestInterceptor {
+            request = requestInterceptor.request(of: request)
+        }
+        AF.request(request.url, method: method.value, parameters: request.paramaters, headers: HTTPHeaders(request.headerFields)).responseJSON { response in
             if case .success(let result) = response.result {
                 let result = before(throwOut: request, of: result)
                 handler(result)
@@ -122,7 +137,7 @@ extension APIManager {
         /// 错误处理：并非所有错误需要外抛至VC处，一些通用的错误如请求超时，接口异常等直接拦截处理提示即可
         /// 另外一些错误需要使用者选择性外抛或者直接吞掉不做处理
         
-        var requestError = APIError(code: error.responseCode ?? 0, message: error.localizedDescription)
+        var requestError = APIError(0, message: error.localizedDescription)
         if let err = error as? AFError {
             requestError = APIError(err.responseCode!, message: err.errorDescription)
         }
