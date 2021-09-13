@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct HTTPReponse {
+public struct APIReponse {
     public fileprivate(set) var request: HTTPRequest
     public var jsonObject: Any
 }

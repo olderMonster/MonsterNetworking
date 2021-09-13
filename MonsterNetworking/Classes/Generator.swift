@@ -6,21 +6,25 @@
 //  Copyright © 2020 印聪. All rights reserved.
 //
 
-public protocol Generator {
+@objc public protocol Generator {
     
-    /// HTTPHeader生成器
-    /// - Parameter paramaters: HTTPBody参数
-    func generatHTTPHeaders(_ paramaters: [String: Any]?) -> [String:String]?
+    /// 通用请求头参数。eg：版本号
+    /// - Returns: 请求头参数
+    @objc optional func headerFields(for service: APIService) -> [String: String]?
     
+    /// 通用接口请求体参数。eg：版本号
+    /// - Returns: 请求体参数
+    @objc optional func paramaters(for service: APIService) -> [String: String]?
 }
 
 
 extension Generator {
     
-    /// HTTPHeader生成器
-    /// - Parameter paramaters: HTTPBody参数
-    func generatHTTPHeaders(_ paramaters: [String: Any]?) -> [String:String]? {
-        return ["Accept":"application/text/html"]
+    @objc optional func headerFields(for service: APIService) -> [String: String]? {
+        return nil
     }
     
+    @objc optional func paramaters(for service: APIService) -> [String: String]? {
+        return nil
+    }
 }

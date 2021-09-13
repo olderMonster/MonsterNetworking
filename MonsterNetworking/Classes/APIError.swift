@@ -9,18 +9,16 @@
 import Foundation
 
 
-public struct APIError: Error {
-    var request: HTTPRequest
-    
-    public var code: Int = 0
+public class APIError: NSObject, Error {
+
+    public var code: NSInteger = 0
     public var message: String = ""
-    public var result: Any? = nil
+    public var result: [String: Any]? = nil
     
-    public init(request: HTTPRequest, code: NSInteger, message: String? = nil) {
-        self.request = request
+    init(_ code: NSInteger, message: String? = nil, result: [String: Any]? = nil) {
+        super.init()
         self.code = code
-        if let text = message {
-            self.message = text
-        }
+        self.result = result
+        self.message = message ?? ""
     }
 }
