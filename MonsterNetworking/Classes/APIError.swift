@@ -15,7 +15,7 @@ public class APIError: NSObject, Error {
     public var message: String = ""
     public var result: [String: Any]? = nil
     
-    init(_ code: NSInteger, message: String? = nil, result: [String: Any]? = nil) {
+    public init(_ code: NSInteger, message: String? = nil, result: [String: Any]? = nil) {
         super.init()
         self.code = code
         self.result = result
