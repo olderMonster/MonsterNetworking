@@ -53,7 +53,7 @@ extension VideoListController {
         APIManager.request(methodName: "api/v1/live?limit=20&offset=0") {  [unowned self] result in
             switch result {
             case .success(let json):
-                let dataArray = (json as! JSON).arrayValue
+                let dataArray = JSON(json).arrayValue
                 let models = dataArray.compactMap { Video(json: $0) }
                 self.videos = models
                 self.videoCollectionView.reloadData()

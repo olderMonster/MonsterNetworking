@@ -39,8 +39,4 @@ enum NetService: APIService {
         }
         return "http://api.63code.com"
     }
-    
-    var commonParamaters: [String : Any] {
-        return [String: Any]()
-    }
 }

@@ -51,7 +51,7 @@ extension TodayViewController {
         APIManager.request(service: NetService.history, methodName: "history/api.php", paramaters:["format": "json"]) { [unowned self] result in
             switch result {
             case .success(let json):
-                let jsonArray = (json as! JSON).arrayValue
+                let jsonArray = JSON(json).arrayValue
                 self.historys = jsonArray.compactMap { $0.stringValue }
                 self.historyTableView.reloadData()
             case .failure(let error):

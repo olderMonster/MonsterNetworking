@@ -139,7 +139,7 @@ extension APIManager {
         
         var requestError = APIError(0, message: error.localizedDescription)
         if let err = error as? AFError {
-            requestError = APIError(err.responseCode!, message: err.errorDescription)
+            requestError = APIError(err.responseCode ?? 0, message: err.errorDescription)
         }
         if let err = error as? APIError {
             requestError = err

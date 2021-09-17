@@ -5,6 +5,7 @@ target 'MonsterNetworking_Example' do
   pod 'SwiftyJSON'
   pod 'SnapKit'
   pod 'Kingfisher'
+  pod 'Toaster'
   
   target 'MonsterNetworking_Tests' do
     inherit! :search_paths

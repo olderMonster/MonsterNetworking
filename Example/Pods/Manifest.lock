@@ -5,12 +5,14 @@ PODS:
     - Alamofire (~> 5.0)
   - SnapKit (4.2.0)
   - SwiftyJSON (5.0.0)
+  - Toaster (2.3.0)
 
 DEPENDENCIES:
   - Kingfisher
   - MonsterNetworking (from `../`)
   - SnapKit
   - SwiftyJSON
+  - Toaster
 
 SPEC REPOS:
   trunk:
@@ -18,6 +20,7 @@ SPEC REPOS:
     - Kingfisher
     - SnapKit
     - SwiftyJSON
+    - Toaster
 
 EXTERNAL SOURCES:
   MonsterNetworking:
@@ -29,7 +32,8 @@ SPEC CHECKSUMS:
   MonsterNetworking: cad7fd9c449a0118742074c7d747ed1d313c5d1a
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  Toaster: c3473963c78e8cabbf6ea6f11ad0fdaae6f54987
 
-PODFILE CHECKSUM: c65bb0f07fd871de500225e41f343746caf2ec81
+PODFILE CHECKSUM: 6fedc11b40ba10be20dfb2e44dd091a533809ec4
 
 COCOAPODS: 1.10.2
